@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ElementType } from "react";
-import { ArrowRight, ArrowUpRight, BadgeCheck, BriefcaseBusiness, Building2, CheckCircle2, ChevronRight, FileCheck2, Fingerprint, Globe2, Headset, LockKeyhole, Search, ShieldCheck, Sparkles, Trademark, UsersRound } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BadgeCheck, BriefcaseBusiness, Building2, CheckCircle2, ChevronRight, FileCheck2, Fingerprint, Globe2, Headset, LockKeyhole, Search, ShieldCheck, Sparkles, UsersRound } from "lucide-react";
 import { categories, services } from "@/lib/services";
 
 const iconMap: Record<string, ElementType> = { "briefcase-business": BriefcaseBusiness, fingerprint: Fingerprint, "file-check": FileCheck2, "shield-check": ShieldCheck, globe: Globe2 };
