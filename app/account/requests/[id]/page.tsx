@@ -8,6 +8,7 @@ export default async function RequestDetailPage({ params }: { params: Promise<{ 
   const { supabase } = await requireUser();
   const { data: request } = await supabase.from("service_requests").select("id, reference_code, status, submitted_at, customer_note, documents_requested, services(name, description, price_kobo, price_is_public, fulfilment_type)").eq("id", id).single();
   if (!request) notFound();
+const service = request.services?.[0];
   const { data: history } = await supabase.from("request_status_history").select("id, old_status, new_status, note, created_at").eq("request_id", id).order("created_at", { ascending: false });
   const { data: docs } = await supabase.from("request_documents").select("id, storage_path, original_filename, created_at").eq("request_id", id).order("created_at", { ascending: false });
   const links = await Promise.all((docs ?? []).map(async (doc) => {
